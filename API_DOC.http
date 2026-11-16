@@ -6,10 +6,10 @@ POST http://127.0.0.1:8000/accounts/register/
 Content-Type: application/json
 
 {
-    "username":"django",
-    "email":"django@gmail.com",
-    "password":"password@123",
-    "phone":"987456635",
+    "username":"react",
+    "email":"react@gmail.com",
+    "password":"react@123",
+    "phone":"98745632",
     "dob":"2026-10-27"
 }
 
@@ -32,3 +32,36 @@ Authorization: Basic django:password@123
     "title":"biriyani",
     "amount":200
 }
+
+
+#api call for retrieving detail
+###
+GET  http://127.0.0.1:8000/expenses/1/
+Accept: application/json
+Authorization: Basic react:react@123
+
+
+#api call for updating 
+###
+PUT  http://127.0.0.1:8000/expenses/1/
+Content-Type: application/json
+Authorization: Basic django:password@123
+
+{
+  "id": 1,
+  "title": "biriyani",
+  "category": "food",
+  "amount": "250.00",
+  "description": null,
+  "payment_method": "upi",
+  "created_at": "2026-11-12T04:57:00.364092Z",
+  "bill_image": null,
+  "owner": 1
+}
+
+
+#api call for deleting
+###
+DELETE http://127.0.0.1:8000/expenses/1/
+Accept: application/json
+Authorization: Basic django:password@123
